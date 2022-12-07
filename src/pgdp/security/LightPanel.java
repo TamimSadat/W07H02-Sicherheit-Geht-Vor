@@ -16,66 +16,66 @@ public class LightPanel extends SignalPost {
         switch (type) {
             case "green":
                 if (getLevel() == 0) {
-                    return false;
-                }
-                else {
                     setLevel(1);
                     setDepiction("green");
                     return true;
                 }
-            case "blue":
-                if (getLevel() == 0 || Objects.equals(getDepiction(), "green")) {
+                else {
                     return false;
                 }
-                else {
+            case "blue":
+                if (getLevel() == 0 || Objects.equals(getDepiction(), "green")) {
                     setLevel(1);
                     setDepiction("blue");
                     return true;
                 }
-            case "yellow":
-                if (getLevel() == 0 || getLevel() == 1) {
+                else {
                     return false;
                 }
-                else {
+            case "yellow":
+                if (getLevel() == 0 || getLevel() == 1) {
                     setLevel(2);
                     setDepiction("yellow");
                     return true;
                 }
-            case "doubleYellow":
-                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2) {
+                else {
                     return false;
                 }
-                else {
+            case "doubleYellow":
+                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2) {
                     setLevel(3);
                     setDepiction("doubleYellow");
                     return true;
+                }
+                else {
+                    return false;
                 }
             case "[SC]":
                 if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || Objects.equals(getDepiction(), "doubleYellow")) {
-                    return false;
-                }
-                else {
                     setLevel(3);
                     setDepiction("doubleYellow");
                     return true;
                 }
-            case "red":
-                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || getLevel() == 3) {
+                else {
                     return false;
                 }
-                else {
+            case "red":
+                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || getLevel() == 3) {
                     setLevel(4);
                     setDepiction("red");
                     return true;
                 }
-            case "end":
-                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || getLevel() == 3 || getLevel() == 4) {
+                else {
                     return false;
                 }
-                else {
+            case "end":
+                if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || getLevel() == 3 || getLevel() == 4) {
                     setLevel(5);
                     setDepiction("yellow");
                     return true;
+                }
+                else {
+                    return false;
                 }
             default:
                 return false;
