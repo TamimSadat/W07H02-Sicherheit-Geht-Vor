@@ -2,10 +2,22 @@ package pgdp.security;
 
 public class Track {
 
-   private SignalPost[] posts;
+    private SignalPost[] posts;
 
     public Track(int newTrack) {
         this.posts = new SignalPost[newTrack];
+
+        for (int i = 0; i < posts.length; i++) {
+            if (i == posts.length - 1) {
+                this.posts[i] = new FinishPost(i);
+            }
+            else if (i % 3 == 0) {
+                this.posts[i] = new LightPanel(i);
+            }
+            else {
+                this.posts[i] = new FlagPost(i);
+            }
+        }
     }
 
     public void setAll(String type, boolean up) {
