@@ -9,13 +9,13 @@ public class Track {
 
         for (int i = 0; i < posts.length; i++) {
             if (i == posts.length - 1) {
-                this.posts[i] = new FinishPost(i);
+                this.posts[i] = new FinishPost(newTrack);
             }
             else if (i % 3 == 0) {
-                this.posts[i] = new LightPanel(i);
+                this.posts[i] = new LightPanel(newTrack);
             }
             else {
-                this.posts[i] = new FlagPost(i);
+                this.posts[i] = new FlagPost(newTrack);
             }
         }
     }
