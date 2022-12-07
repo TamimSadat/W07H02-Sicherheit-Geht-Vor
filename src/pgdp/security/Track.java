@@ -2,8 +2,10 @@ package pgdp.security;
 
 public class Track {
 
-    public Track(SignalPost[] newTrack) {
+    SignalPost[] posts;
 
+    public Track(int newTrack) {
+        posts = new SignalPost[newTrack];
     }
 
     public void setAll(String type, boolean up) {
