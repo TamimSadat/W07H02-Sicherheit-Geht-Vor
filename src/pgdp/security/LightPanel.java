@@ -128,8 +128,8 @@ public class LightPanel extends SignalPost {
                     " of type light panel is in level " + getLevel() + " and is switched off";
         }
         else {
-           return "Signal⎵post⎵" + getPostNumber() +
-                    "⎵of⎵type⎵light⎵panel⎵is⎵in⎵level⎵" + getLevel() + "⎵and⎵is⎵blinking⎵" + getDepiction();
+           return "Signal post " + getPostNumber() +
+                    " of type light panel is in level " + getLevel() + " and is blinking " + getDepiction();
         }
     }
 }
