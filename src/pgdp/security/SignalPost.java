@@ -17,6 +17,12 @@ public abstract class SignalPost {
 		this.depiction = "";
 	}
 
+	public abstract boolean up(String type);
+	public abstract boolean down(String type);
+	public String toString() {
+		return "Signal Post " + postNumber + ": " + level + " " + depiction;
+	}
+
 	public int getPostNumber() {
 		return postNumber;
 	}
@@ -40,4 +46,5 @@ public abstract class SignalPost {
 	public void setLevel(int level) {
 		this.level = level;
 	}
+
 }
