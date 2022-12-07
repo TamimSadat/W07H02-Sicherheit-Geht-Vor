@@ -36,4 +36,11 @@ public class Track {
 
     }
 
+    public SignalPost[] getPosts() {
+        return posts;
+    }
+
+    public void setPosts(SignalPost[] posts) {
+        this.posts = posts;
+    }
 }
