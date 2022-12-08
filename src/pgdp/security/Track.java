@@ -61,10 +61,13 @@ public class Track {
               }
           }
           else {
-              for (int i = 0; i < posts.length; i++) {
-                  posts[i].down(type);
-              }
+              posts[start].up(type);
           }
+       }
+       else {
+           for (int i = 0; i < posts.length; i++) {
+               posts[i].down(type);
+           }
        }
     }
 
