@@ -133,7 +133,44 @@ public class Track {
     }
 
     public void createLappedCarAt(int post) {
-
+        int differenz = posts.length - post;
+       if (post < posts.length - 3) {
+           for (int i = 0; i < posts.length; i++) {
+               if (i == post || i + 1 == post || i + 2 == post || i + 3 == post) {
+                   posts[i].up("blue");
+               }
+           }
+       }
+       else if (differenz == 3) {
+           posts[0].up("blue");
+           for (int i = 0; i < posts.length; i++) {
+               if (i == post || i + 1 == post || i + 2 == post) {
+                   posts[i].up("blue");
+               }
+           }
+       }
+       else if (differenz == 2) {
+           for (int i = 0; i < posts.length; i++) {
+               if (i == post || i + 1 == post) {
+                   posts[i].up("blue");
+               }
+           }
+           posts[0].up("blue");
+           posts[1].up("blue");
+       }
+       else if (differenz == 1) {
+           for (int i = 0; i < posts.length; i++) {
+               if (i == post) {
+                   posts[i].up("blue");
+               }
+           }
+           posts[0].up("blue");
+           posts[1].up("blue");
+           posts[2].up("blue");
+       }
+       else{
+           //whatever
+       }
     }
 
     public void removeLappedCarAt(int post) {
