@@ -5,8 +5,11 @@ public class Track {
     private SignalPost[] posts;
 
     public Track(int newTrack) {
-        this.posts = new SignalPost[newTrack];
+        if (newTrack <= 0) {
+            newTrack = 10;
+        }
 
+        this.posts = new SignalPost[newTrack];
         for (int i = 0; i < posts.length; i++) {
             if (i == posts.length - 1) {
                 this.posts[i] = new FinishPost(i);
@@ -21,11 +24,48 @@ public class Track {
     }
 
     public void setAll(String type, boolean up) {
-
+        if (up) {
+            for (int i = 0; i < posts.length; i++) {
+                posts[i].up(type);
+            }
+        }
+        else {
+            for (int i = 0; i < posts.length; i++) {
+                posts[i].down(type);
+            }
+        }
     }
-
     public void setRange(String type, boolean up, int start, int end) {
-
+       if (up) {
+          if (start < end) {
+              for (int i = 0; i < posts.length; i++) {
+                  if (i >= start && i <= end) {
+                      posts[i].up(type);
+                  }
+                  else {
+                      posts[i].down(type);
+                  }
+              }
+          }
+          else if (end < start) {
+              for (int i = 0; i < posts.length; i++) {
+                  if (i <= end) {
+                      posts[i].up(type);
+                  }
+                  else if (i >= start) {
+                      posts[i].up(type);
+                  }
+                  else {
+                      posts[i].down(type);
+                  }
+              }
+          }
+          else {
+              for (int i = 0; i < posts.length; i++) {
+                  posts[i].down(type);
+              }
+          }
+       }
     }
 
     public void createHazardAt(int start, int end) {
