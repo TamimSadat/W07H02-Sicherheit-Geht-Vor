@@ -1,5 +1,7 @@
 package pgdp.security;
 
+import java.util.Arrays;
+
 public class Track {
 
     private SignalPost[] posts;
@@ -215,7 +217,15 @@ public class Track {
     }
 
     public void printStatus() {
-
+        for (int i = 0; i < posts.length; i++) {
+            if (i == posts.length - 1) {
+                System.out.print(posts[i]);
+            }
+            else {
+                System.out.println(posts[i]);
+            }
+        }
+      System.out.println("\n");
     }
 
     public SignalPost[] getPosts() {
