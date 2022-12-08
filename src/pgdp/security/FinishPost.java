@@ -1,6 +1,8 @@
 package pgdp.security;
 
 
+import java.util.Objects;
+
 public class FinishPost extends FlagPost {
 
     public FinishPost(int postNumber) {
