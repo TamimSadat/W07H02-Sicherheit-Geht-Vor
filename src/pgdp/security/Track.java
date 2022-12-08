@@ -106,7 +106,30 @@ public class Track {
     }
 
     public void removeHazardAt(int start, int end) {
+        if (start < end) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i >= start && i <= end) {
+                    posts[i].down("danger");
+                }
+            }
+        }
+        else if (end < start) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i <= end) {
+                    posts[i].down("danger");
 
+                }
+                else if (i >= start) {
+                    posts[i].down("danger");
+                }
+                else {
+                    //whatever
+                }
+            }
+        }
+        else {
+            posts[start].down("danger");
+        }
     }
 
     public void createLappedCarAt(int post) {
