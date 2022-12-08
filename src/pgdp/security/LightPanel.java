@@ -86,9 +86,14 @@ public class LightPanel extends SignalPost {
     public boolean down(String type) {
         switch (type) {
             case "clear":
-                setLevel(0);
-                setDepiction("");
-                return true;
+                if (getLevel() == 0 && Objects.equals(getDepiction(), "")) {
+                    return false;
+                }
+                else {
+                    setLevel(0);
+                    setDepiction("");
+                    return true;
+                }
             case "green":
                 if (Objects.equals(getDepiction(), "green")) {
                     setLevel(0);
