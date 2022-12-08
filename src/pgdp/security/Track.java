@@ -72,7 +72,37 @@ public class Track {
     }
 
     public void createHazardAt(int start, int end) {
-
+        if (start < end) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i >= start && i < end) {
+                    posts[i].up("yellow");
+                }
+                else if (i >= start && i == end) {
+                    posts[i].up("green");
+                }
+            }
+        }
+        else if (end < start) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i <= end) {
+                    if (i == end) {
+                        posts[i].up("green");
+                    }
+                    else {
+                        posts[i].up("yellow");
+                    }
+                }
+                else if (i >= start) {
+                    posts[i].up("yellow");
+                }
+                else {
+                    //whatever
+                }
+            }
+        }
+        else {
+            posts[start].up("green");
+        }
     }
 
     public void removeHazardAt(int start, int end) {
