@@ -53,7 +53,7 @@ public class LightPanel extends SignalPost {
             case "[SC]":
                 if (getLevel() == 0 || getLevel() == 1 || getLevel() == 2 || Objects.equals(getDepiction(), "doubleYellow")) {
                     setLevel(3);
-                    setDepiction("doubleYellow");
+                    setDepiction("[SC]");
                     return true;
                 }
                 else {
