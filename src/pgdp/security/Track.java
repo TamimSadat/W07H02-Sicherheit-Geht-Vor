@@ -136,22 +136,22 @@ public class Track {
         int differenz = posts.length - post;
        if (post < posts.length - 3) {
            for (int i = 0; i < posts.length; i++) {
-               if (i == post || i + 1 == post || i + 2 == post || i + 3 == post) {
+               if (i == post || i == post + 1 || i == post + 2 || i == post + 3) {
                    posts[i].up("blue");
                }
            }
        }
        else if (differenz == 3) {
-           posts[0].up("blue");
            for (int i = 0; i < posts.length; i++) {
-               if (i == post || i + 1 == post || i + 2 == post) {
+               if (i == post || i == post + 1 || i == post + 2) {
                    posts[i].up("blue");
                }
            }
+           posts[0].up("blue");
        }
        else if (differenz == 2) {
            for (int i = 0; i < posts.length; i++) {
-               if (i == post || i + 1 == post) {
+               if (i == post || i == post + 1) {
                    posts[i].up("blue");
                }
            }
@@ -174,7 +174,44 @@ public class Track {
     }
 
     public void removeLappedCarAt(int post) {
-
+        int differenz = posts.length - post;
+        if (post < posts.length - 3) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i == post || i == post + 1 || i == post + 2 || i == post + 3) {
+                    posts[i].down("blue");
+                }
+            }
+        }
+        else if (differenz == 3) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i == post || i == post + 1 || i == post + 2) {
+                    posts[i].down("blue");
+                }
+            }
+            posts[0].down("blue");
+        }
+        else if (differenz == 2) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i == post || i == post + 1) {
+                    posts[i].down("blue");
+                }
+            }
+            posts[0].down("blue");
+            posts[1].down("blue");
+        }
+        else if (differenz == 1) {
+            for (int i = 0; i < posts.length; i++) {
+                if (i == post) {
+                    posts[i].down("blue");
+                }
+            }
+            posts[0].down("blue");
+            posts[1].down("blue");
+            posts[2].down("blue");
+        }
+        else{
+            //whatever
+        }
     }
 
     public void printStatus() {
